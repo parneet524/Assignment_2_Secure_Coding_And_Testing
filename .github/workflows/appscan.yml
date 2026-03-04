@@ -2,7 +2,11 @@ name: AppScan CodeSweep
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   appscan:
