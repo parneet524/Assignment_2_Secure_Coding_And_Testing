@@ -1,0 +1,17 @@
+name: AppScan CodeSweep
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  appscan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run AppScan CodeSweep
+        uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v1
+        with:
+          asoc_key: ${{ secrets.ASOC_KEY }}
