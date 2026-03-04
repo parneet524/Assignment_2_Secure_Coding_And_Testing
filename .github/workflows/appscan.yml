@@ -1,7 +1,9 @@
 name: AppScan CodeSweep
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   appscan:
@@ -16,8 +18,3 @@ jobs:
 
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v1
-        with:
-          asoc_key: ${{ secrets.ASOC_KEY }}
-          status: "on"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
